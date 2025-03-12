@@ -146,8 +146,6 @@ date	    datetime	Дата прохождения теста
 
 ![image](https://github.com/user-attachments/assets/5ae915e2-61ae-4b6f-8bd9-bb6879011b34)
 
-![image](https://github.com/user-attachments/assets/e49d42db-34ea-4980-aa7e-fc285f731a87)
-
 PDF-отчёт
 
 ![image](https://github.com/user-attachments/assets/ce4e0459-f455-472b-b52f-e4ce2554e8ba)
