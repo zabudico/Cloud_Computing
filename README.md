@@ -132,25 +132,31 @@ date	    datetime	Дата прохождения теста
 
 Прохождение теста
 
-![image](https://github.com/user-attachments/assets/1a7dd014-53a1-4c9a-9d30-7e219cb89b5f)
-![image](https://github.com/user-attachments/assets/f8ebb967-2b75-4f46-ab22-734835b8332e)
+![image](https://github.com/user-attachments/assets/4efa8e63-cd4a-426f-84b0-cf802cce303c)
+
+![image](https://github.com/user-attachments/assets/4b0a8679-b1fc-4a65-b3ac-20e5887f7dc1)
 
 
 Результаты
 
-![image](https://github.com/user-attachments/assets/5da3bd9a-f53d-40ac-819f-099dca2bbb50)
+![image](https://github.com/user-attachments/assets/1ea2684a-e0f5-4dda-83b2-92860c83598b)
+
 
 Таблица с историей всех попыток
+
+![image](https://github.com/user-attachments/assets/5ae915e2-61ae-4b6f-8bd9-bb6879011b34)
 
 ![image](https://github.com/user-attachments/assets/e49d42db-34ea-4980-aa7e-fc285f731a87)
 
 PDF-отчёт
 
-![image](https://github.com/user-attachments/assets/edee3de5-d3ec-4497-95e9-39b4bc384fa3)
+![image](https://github.com/user-attachments/assets/ce4e0459-f455-472b-b52f-e4ce2554e8ba)
 
 Пример экспортированного отчёта
 
 ![image](https://github.com/user-attachments/assets/b784ee09-9c11-4f30-a431-884f16c64375)
+![Uploading image.png…]()
+
 
 
 🔧 Технические детали
