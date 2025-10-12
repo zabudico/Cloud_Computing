@@ -36,6 +36,9 @@
 2. Вошёл в консоль управления под root-пользователем.
 3. В правом верхнем углу выбрал регион EU (Frankfurt) `eu-central-1`.
 
+<img width="974" height="470" alt="image" src="https://github.com/user-attachments/assets/6510ffbc-de17-48eb-b5e7-d97a231f57a4" />
+
+
 
 #### Задание 1. Создание IAM группы и пользователя
 
