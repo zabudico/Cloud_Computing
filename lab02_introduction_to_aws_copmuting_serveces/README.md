@@ -348,8 +348,6 @@ exit
 
 <img width="974" height="528" alt="image" src="https://github.com/user-attachments/assets/6e521082-cc82-4304-8044-051e54d54dfa" />
 
-<img width="974" height="528" alt="image" src="https://github.com/user-attachments/assets/4b50f7c8-8a4f-4005-a040-6bce16775037" />
-
 
 #### Задание 7. Завершение работы и удаление ресурсов
 1. Остановил запущенную виртуальную машину (инстанс EC2) используя AWS CLI.
