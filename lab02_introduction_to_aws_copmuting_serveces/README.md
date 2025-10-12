@@ -113,7 +113,7 @@ IAM — это сервис для управления доступом в AWS.
     
     2. AMI: выбрал `Amazon Linux 2023 AMI`. Это образ, который будет использоваться для создания виртуальной машины.
     
-    3. Instance type: `t3.micro`.
+    3. Instance type: t3.micro.
 
 <img width="376" height="454" alt="image" src="https://github.com/user-attachments/assets/ec345983-57d9-4914-932f-dea6c7a90a54" />
 
