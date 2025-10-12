@@ -39,7 +39,6 @@
 <img width="974" height="470" alt="image" src="https://github.com/user-attachments/assets/6510ffbc-de17-48eb-b5e7-d97a231f57a4" />
 
 
-
 #### Задание 1. Создание IAM группы и пользователя
 
 IAM — это сервис для управления доступом в AWS. Здесь создаются пользователи, группы и политики (наборы прав).
@@ -50,6 +49,13 @@ IAM — это сервис для управления доступом в AWS.
     * Перешёл в раздел "`Groups`" и Нажал "`Create New Group`".
     * Ввёл имя группы `Admins` и Нажал "Next Step".
     * На шаге "`Attach Policy`" выбрал политику `AdministratorAccess`.
+
+<img width="974" height="466" alt="image" src="https://github.com/user-attachments/assets/9c3a3610-de4a-43f5-9511-44c3380212a0" />
+
+<img width="974" height="466" alt="image" src="https://github.com/user-attachments/assets/afc62a64-e188-42e3-b3b9-d676249ed7a2" />
+
+<img width="974" height="463" alt="image" src="https://github.com/user-attachments/assets/07276829-501b-4559-99fa-12ffd21c2297" />
+
 
 Что делает данная политика?
 
@@ -62,10 +68,18 @@ IAM — это сервис для управления доступом в AWS.
     * Ввёл имя пользователя `admin`.
     * Привязал пользователя к группе `Admins`.
     * Разрешил пользователю доступ в AWS Management Console.
+  
+<img width="974" height="882" alt="image" src="https://github.com/user-attachments/assets/d6af2056-78bf-4f50-bc19-6c7474ba6751" />
+
 
 4. Убедился, что пользователь создан и имеет доступ к консоли.
 
+<img width="974" height="954" alt="image" src="https://github.com/user-attachments/assets/5bef2cc8-6e5a-41d8-8793-cc72fdde6c31" />
+
+
 5. Вышел из консоли под root-пользователем и Вошёл под новым IAM пользователем.
+
+<img width="974" height="472" alt="image" src="https://github.com/user-attachments/assets/9702dce0-c68c-40c6-ada0-453a21593b2f" />
 
 
 #### Задание 2. Настройка Zero-Spend Budget
@@ -77,7 +91,13 @@ IAM — это сервис для управления доступом в AWS.
     * Budget name: ZeroSpend
     * Email recipients: ваш email
 
+<img width="974" height="426" alt="image" src="https://github.com/user-attachments/assets/dd8d7c9e-0b71-446f-a882-1f898cb5b54d" />
+
+
 4. Нажал "Create budget" внизу страницы.
+
+<img width="563" height="383" alt="image" src="https://github.com/user-attachments/assets/b0667a20-e5d8-4e77-9b1f-921961bae519" />
+
 
 После создания данного бюджета буду получать уведомления, если расходы превысят $0.
 
@@ -94,6 +114,9 @@ IAM — это сервис для управления доступом в AWS.
     2. AMI: выбрал `Amazon Linux 2023 AMI`. Это образ, который будет использоваться для создания виртуальной машины.
     
     3. Instance type: `t3.micro`.
+
+<img width="376" height="454" alt="image" src="https://github.com/user-attachments/assets/ec345983-57d9-4914-932f-dea6c7a90a54" />
+
     
     4. Key pair. Это криптографическая пара ключей (приватный и публичный). Она нужна для безопасного входа на сервер по SSH.
        
@@ -119,6 +142,10 @@ IAM — это сервис для управления доступом в AWS.
 
     7. Configure Storage. Оставил настройки по умолчанию.
 
+<img width="559" height="453" alt="image" src="https://github.com/user-attachments/assets/97a66085-f45f-4570-ac7b-068a7fb678cb" />
+
+<img width="565" height="456" alt="image" src="https://github.com/user-attachments/assets/704c219e-4267-4373-8ab2-3f425ff97cae" />
+
     8. Пролистал вниз до Advanced details → User Data и вставил следующий скрипт:
 
 ```bash
@@ -130,6 +157,11 @@ systemctl enable nginx
 systemctl start nginx
 ```
 
+<img width="974" height="646" alt="image" src="https://github.com/user-attachments/assets/c023309a-e7bb-494e-90e1-3ba69745a1ea" />
+
+<img width="758" height="98" alt="image" src="https://github.com/user-attachments/assets/6f3ec8f0-bf75-468b-9572-69bf4fa7f25d" />
+
+
 В зависимости от выбранного AMI, команды в скрипте могут отличаться.
 
 `Что такое User Data и какую роль выполняет данный скрипт? Для чего используется nginx?`
@@ -140,6 +172,11 @@ systemctl start nginx
 4. Нажал Launch instance и дождался статуса Running и Status checks: 2/2. После того, как виртуальная машина запустится, увидел её публичный IP-адрес в колонке "IPv4 Public IP".
 
 5. Проверил, что веб-сервер работает, открыв в браузере URL: http://<Public-IP>, где <Public-IP> — это публичный IP-адрес виртуальной машины.
+
+   <img width="974" height="378" alt="image" src="https://github.com/user-attachments/assets/a7916486-b3c8-4095-88ee-bf6c9e0c2a2d" />
+
+   <img width="974" height="454" alt="image" src="https://github.com/user-attachments/assets/d5e1aab7-a637-40cc-a914-21dab82c50de" />
+
 
 #### Задание 4. Логирование и мониторинг
 
@@ -159,6 +196,9 @@ systemctl start nginx
 
 * Убедился, что обе проверки прошли успешно (2/2 checks passed).
 
+<img width="974" height="292" alt="image" src="https://github.com/user-attachments/assets/78cb6bc2-9084-434e-b4eb-007984462097" />
+
+
 2. Открыл вкладку Monitoring.
 * На этой вкладке отображаются метрики Amazon CloudWatch для инстанса.
 * Так как инстанс был создан недавно, метрик пока немного. 
@@ -169,6 +209,13 @@ systemctl start nginx
 `В каких случаях важно включать детализированный мониторинг?`
 
 Детализированный мониторинг важен для критически важных приложений, когда необходимо быстро реагировать на изменения производительности, для диагностики проблем в реальном времени и для приложений с высокой нагрузкой, где каждая минута простоя критична.
+
+<img width="974" height="598" alt="image" src="https://github.com/user-attachments/assets/f292f4e3-ba4c-4650-9afb-6d0b42825ec3" />
+
+<img width="803" height="481" alt="image" src="https://github.com/user-attachments/assets/eef18b4b-ee22-45ed-80eb-551dd12ac402" />
+
+<img width="974" height="444" alt="image" src="https://github.com/user-attachments/assets/5011502e-d3a3-4fca-8dfd-a746c2cf87dd" />
+
 
 3. Просмотр системного лога (System Log)
 
@@ -181,11 +228,17 @@ systemctl start nginx
 * Пролистал вывод и нашёл строки, показывающие установку пакетов (например, nginx из User Data).
 * нажал Cancel, чтобы выйти.
 
+<img width="974" height="873" alt="image" src="https://github.com/user-attachments/assets/6be5864f-2030-432f-b78a-ce7ec1e16620" />
+
+
 4. Просмотр снимка экрана инстанса (Instance Screenshot)
 
     * В меню выбрал `Actions` → `Monitor and troubleshoot` → `Get instance screenshot`. увидел изображение консоли EC2 (как если бы к нему был подключён монитор).
     * Это особенно полезно, если не могу подключиться к инстансу по SSH: скриншот помогает понять, зависла ли ОС, есть ли kernel panic или другие ошибки.
     * нажал Cancel, чтобы выйти.
+  
+<img width="974" height="152" alt="image" src="https://github.com/user-attachments/assets/ab1ca597-128a-4549-880e-c74d1c608fb9" />
+
 
 #### Задание 5. Подключение к EC2 инстансу по SSH
 
@@ -202,6 +255,9 @@ cd /path/to/my/key
 chmod 400 yournickname-keypair.pem
 ```
 
+<img width="581" height="797" alt="image" src="https://github.com/user-attachments/assets/ad2f9a08-3f66-4992-a5e4-00edee390d4c" />
+
+
 * Файл ключа .pem находится в директории, доступной только пользователю,и не имеет разрешений для других пользователей.
 
 * Настрол следующим образом:
@@ -210,6 +266,9 @@ chmod 400 yournickname-keypair.pem
     * Перешёл на вкладку "Безопасность".
     * Убедился, что доступ есть только у учётной записи Windows.
     Удалил права у «Все» (Everyone) или других пользователей.
+
+<img width="974" height="712" alt="image" src="https://github.com/user-attachments/assets/988b4b93-3aaf-424c-942c-15dc93846d23" />
+
 
 5. Подключился к инстансу по SSH:
 
@@ -225,6 +284,7 @@ ssh -i yournickname-keypair.pem ec2-user@<Public-IP>
 
 После успешного подключения увидел приглашение командной строки: 
 
+<img width="974" height="159" alt="image" src="https://github.com/user-attachments/assets/4f101d10-37c7-45f8-9d8d-ecdd6a04d09a" />
 
 Выполнил команду для проверки статуса веб-сервера 
 Nginx:
@@ -259,7 +319,13 @@ sudo usermod -aG docker ec2-user
 docker --version
 ```
 
+<img width="974" height="528" alt="image" src="https://github.com/user-attachments/assets/989f282c-1762-4e19-9f55-12a7da9e8aaa" />
+
 3. Вышел из сессии SSH и Подключился снова, чтобы обновить группы пользователя.
+
+```bash
+exit
+```
 
 4. Используя docker compose, развернул PHP-приложение (созданное в рамках лабораторной работы по основам веб-разработки). Для работы приложения необходимо поднять несколько контейнеров, каждый из которых отвечает за свою часть инфраструктуры:
 
@@ -268,10 +334,22 @@ docker --version
 * mysql — реляционная база данных для хранения информации приложения.
 * adminer — лёгкий веб-интерфейс для администрирования базы данных (альтернатива phpMyAdmin).
 
+  <img width="974" height="528" alt="image" src="https://github.com/user-attachments/assets/22a5bc29-b57d-4ffd-bd9f-9c634de1e6f0" />
+
+
 5. После запуска Убедился, что:
 * Приложение доступно по адресу http://<Public-IP>.
 * Приложение корректно взаимодействует с базой данных MySQL.
 * Админка Adminer доступна по адресу http://<Public-IP>:8080.
+
+  <img width="974" height="528" alt="image" src="https://github.com/user-attachments/assets/63d26ba3-6af8-4c43-a550-ecea2e7a706c" />
+
+<img width="974" height="528" alt="image" src="https://github.com/user-attachments/assets/503ae81d-ee16-4013-9b71-9f50ba09697d" />
+
+<img width="974" height="528" alt="image" src="https://github.com/user-attachments/assets/6e521082-cc82-4304-8044-051e54d54dfa" />
+
+![Uploading image.png…]()
+
 
 #### Задание 7. Завершение работы и удаление ресурсов
 1. Остановил запущенную виртуальную машину (инстанс EC2) используя AWS CLI.
