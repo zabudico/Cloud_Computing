@@ -34,6 +34,8 @@ _Amazon VPC (Virtual Private Cloud)_ — это собственная вирт�
 1. Вошёл в AWS Management Console.
 2. Убедился, что регион установлен на `Frankfurt` (eu-central-1).
 3. В строке поиска ввёл _VPC_ и открыл консоль.
+   
+<img width="943" height="856" alt="aws_1" src="https://github.com/user-attachments/assets/759581d1-1e97-458c-88c9-06b57f70ad00" />
 
 ### Шаг 2. Создание VPC
 
@@ -48,6 +50,10 @@ _Amazon VPC (Virtual Private Cloud)_ — это собственная вирт�
 
 _VPC_ — это “контейнер” для подсетей. Внутри одной VPC можно создавать десятки подсетей с разными маршрутами и правилами.
 
+<img width="1012" height="707" alt="aws_2" src="https://github.com/user-attachments/assets/b7741443-b3c0-4ec5-9a41-9b9604a9edcb" />
+
+<img width="1637" height="697" alt="aws_2_1" src="https://github.com/user-attachments/assets/92708779-60df-47b3-a9cb-d238afb3a549" />
+
 ### Шаг 3. Создание Internet Gateway (IGW)
 
 Internet Gateway позволяет ресурсам внутри VPC выходить в Интернет. _Без него публичные IP-адреса не будут работать_. Если  виртуальной машине (EC2) назначен публичный IP, но нет IGW, она не сможет общаться с внешним миром.
@@ -59,6 +65,14 @@ Internet Gateway позволяет ресурсам внутри VPC выход
    2. нажал `Actions` → `Attach to VPC`.
    3. В списке выбрал `zabudico-vpc-k21`.
    4. подтвердил действие.
+
+<img width="944" height="552" alt="aws_3" src="https://github.com/user-attachments/assets/3e1d76c0-6739-4e0a-8887-3271ff133c4c" />
+
+<img width="687" height="594" alt="aws_3_1" src="https://github.com/user-attachments/assets/34c02bb9-10fb-4729-9905-3b9d6d281e8d" />
+
+<img width="936" height="699" alt="aws_3_2" src="https://github.com/user-attachments/assets/c4d93472-248b-459d-a021-df23a4f1f1f9" />
+
+<img width="691" height="700" alt="aws_3_3" src="https://github.com/user-attachments/assets/db687f8d-7996-4133-ac21-21185f134e7c" />
 
 ### Шаг 4. Создание подсетей
 
@@ -94,6 +108,10 @@ _Подсети (subnets)_ — это сегменты внутри VPC, кот�
    4. `IPv4 CIDR block`: `10.(k%30).2.0/24`
       > Диапазон адресов не должен пересекаться с диапазоном публичной подсети.
 3. нажал `Create subnet`.
+
+<img width="1625" height="745" alt="aws_4" src="https://github.com/user-attachments/assets/0f236951-9e45-4e3a-8bb8-17bbaa17460b" />
+
+<img width="1640" height="771" alt="aws_4_1" src="https://github.com/user-attachments/assets/8224795d-16e9-4af2-99a9-a0b1a9eb60cf" />
 
 > Является ли подсеть "приватной" на данный момент? Почему?
 
@@ -139,6 +157,16 @@ _Подсети (subnets)_ — это сегменты внутри VPC, кот�
 
 На данный момент все ресурсы, которые будут созданы в приватной подсети, не смогут выходить в Интернет, так как нет NAT Gateway и соответствующего маршрута.
 
+<img width="1642" height="527" alt="aws_5" src="https://github.com/user-attachments/assets/b4fcfb61-f718-4704-9cf3-886c9901d1bc" />
+
+<img width="941" height="723" alt="aws_5_1" src="https://github.com/user-attachments/assets/fd4a1892-b2f9-41a6-b423-56794d4b48dd" />
+
+<img width="1634" height="587" alt="aws_5_2" src="https://github.com/user-attachments/assets/2ee3cf97-4f99-45f2-9bef-b4981fb91177" />
+
+<img width="939" height="462" alt="aws_5_3" src="https://github.com/user-attachments/assets/7b65061e-e717-4d2e-8796-c51d8ea2fe17" />
+
+<img width="941" height="459" alt="aws_5_4" src="https://github.com/user-attachments/assets/71ddb956-a840-4319-9d63-b2743f6d12a7" />
+
 ### Шаг 6. Создание NAT Gateway
 
 NAT Gateway позволяет ресурсам в приватной подсети выходить в Интернет (например, для обновления ПО), при этом оставаясь недоступными извне.
@@ -177,6 +205,16 @@ _Elastic IP_ — это статический публичный IPv4-адре�
 
 Теперь ресурсы в приватной подсети смогут выходить в Интернет через NAT Gateway.
 
+<img width="1817" height="727" alt="aws_6" src="https://github.com/user-attachments/assets/ba05af2a-1935-4852-b7bb-3f8945541e24" />
+
+<img width="1629" height="571" alt="aws_6_1" src="https://github.com/user-attachments/assets/c4e7c0f8-91a5-4e39-a69f-f12fa4adacf6" />
+
+<img width="662" height="682" alt="aws_6_2" src="https://github.com/user-attachments/assets/73745c2d-fcb4-4bb8-adab-64bdfbd364bd" />
+
+<img width="667" height="609" alt="aws_6_3" src="https://github.com/user-attachments/assets/8dc7b62d-bc42-41a9-a37a-bc3761197fe7" />
+
+<img width="939" height="734" alt="aws_6_4" src="https://github.com/user-attachments/assets/54c7d4c3-4a7a-45c4-85c5-85ccd7af975f" />
+
 ### Шаг 7. Создание Security Groups
 
 _Security Group (SG)_ — это виртуальный брандмауэр на уровне инстанса (EC2), который контролирует входящий (Inbound) и исходящий (Outbound) трафик.
@@ -194,6 +232,11 @@ _Security Group (SG)_ — это виртуальный брандмауэр н�
    2. `db-sg-k21` для базы данных с разрешением входящего трафика:
       1. Тип: `MySQL/Aurora`, Протокол: `TCP`, Порт: `3306`, Источник: `web-sg-k21` (разрешаю доступ только с веб-сервера)
       2. Тип: `SSH`, Протокол: `TCP`, Порт: `22`, Источник: `bastion-sg-k21` (разрешаю доступ только с bastion host)
+     
+   <img width="1800" height="408" alt="aws_7_1" src="https://github.com/user-attachments/assets/50983e84-ebc0-4dd7-84bc-a02d13b9b03d" />
+   
+<img width="1801" height="474" alt="aws_7_2" src="https://github.com/user-attachments/assets/7cb1bb95-56d8-4355-812e-5bd58b33e40e" />
+
 
 > Что такое _Bastion Host_ и зачем он нужен в архитектуре с приватными подсетями?
 
@@ -260,6 +303,11 @@ _Для всех инстансов использую_:
    #!/bin/bash
    dnf install -y mariadb105
    ```
+<img width="981" height="710" alt="aws_8" src="https://github.com/user-attachments/assets/6896ac50-d139-4166-870b-ece381e38c84" />
+
+<img width="884" height="758" alt="aws_8_1" src="https://github.com/user-attachments/assets/768b5d3a-8409-4fea-aa66-331f87fe8f35" />
+
+<img width="887" height="748" alt="aws_8_2" src="https://github.com/user-attachments/assets/6974cbaf-1a69-47bc-b2a1-c6539a35106d" />
 
 ### Шаг 9. Проверка работы
 
@@ -311,6 +359,11 @@ _Для всех инстансов использую_:
    Это строго соответствует текущему inbound правилу 3306 → web-sg-k21 и ничего не ослабляет.
 
 6. Вышел из `db-server` и `bastion-host`.
+
+<img width="973" height="1010" alt="aws_9" src="https://github.com/user-attachments/assets/450a245c-7203-48c1-81ea-0176352427c3" />
+
+<img width="967" height="580" alt="aws_9_1" src="https://github.com/user-attachments/assets/f0aaf20b-5955-49c6-989f-a3958ff278e0" />
+
 
 ### Шаг 10. Дополнительные задания. Подключение в приватную подсеть через Bastion Host
 
