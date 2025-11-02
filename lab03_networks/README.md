@@ -268,11 +268,11 @@ _Для всех инстансов использую_:
 5. В разделе `Advanced Details` в поле `User data` вставил следующий скрипт для автоматической установки веб-сервера:
 
    ```bash
-   #!/bin/bash
-   dnf install -y httpd php
-   echo "<?php phpinfo(); ?>" > /var/www/html/index.php
-   systemctl enable httpd
-   systemctl start httpd
+#!/bin/bash
+dnf install -y httpd php
+echo "<?php phpinfo(); ?>" > /var/www/html/index.php
+systemctl enable httpd
+systemctl start httpd
    ```
 
 Для `db-server`:
@@ -284,11 +284,11 @@ _Для всех инстансов использую_:
 5. В разделе `Advanced Details` в поле `User data` вставил следующий скрипт для автоматической установки MySQL сервера:
 
    ```bash
-   #!/bin/bash
-   dnf install -y mariadb105-server
-   systemctl enable mariadb
-   systemctl start mariadb
-   mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'StrongPassword123!'; FLUSH PRIVILEGES;"
+#!/bin/bash
+dnf install -y mariadb105-server
+systemctl enable mariadb
+systemctl start mariadb
+mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY 'StrongPassword123!'; FLUSH PRIVILEGES;"
    ```
 
 Для `bastion-host`:
@@ -300,8 +300,8 @@ _Для всех инстансов использую_:
 5. В разделе `Advanced Details` в поле `User data` вставил следующий скрипт для автоматической установки MySQL клиента:
 
    ```bash
-   #!/bin/bash
-   dnf install -y mariadb105
+#!/bin/bash
+dnf install -y mariadb105
    ```
 <img width="981" height="710" alt="aws_8" src="https://github.com/user-attachments/assets/6896ac50-d139-4166-870b-ece381e38c84" />
 
@@ -353,9 +353,9 @@ _Для всех инстансов использую_:
 
    # SSH на web
 ```bash
-   ssh -i student-key-k21.pem ec2-user@3.68.231.117
+   ssh -i zabudico-key-k21.pem ec2-user@18.194.183.176
    sudo yum install -y mariadb
-   mysql -h 10.22.2.201 -u root -p
+   mysql -h 10-21-0-190 -u root -p
 ```
 
    Это строго соответствует текущему inbound правилу 3306 → web-sg-k21 и ничего не ослабляет.
