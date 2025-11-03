@@ -1,0 +1,3 @@
+timestamp,user_id,action
+2024-01-01 10:00:01,user123,login
+2024-01-01 10:05:23,user456,view_page
