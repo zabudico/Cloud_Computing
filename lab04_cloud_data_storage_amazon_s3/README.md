@@ -40,9 +40,9 @@ Amazon S3 — это объектное хранилище AWS, предназн
 
 Формат имён бакетов:
 
-* Публичный: `cc-lab4-pub-k21`
+* Публичный: `cc-lab4-pub-k21-zabudico-alexandr-21-21`
 
-* Приватный: `cc-lab4-priv-k21`
+* Приватный: `cc-lab4-priv-k21-zabudico-alexandr-21-21`
 
 ( kXX - k21 номер по журналу )
 
@@ -81,7 +81,7 @@ s3-lab/
 
 Публичный бакет:
 
-* Имя: cc-lab4-pub-k21
+* Имя: cc-lab4-pub-k21-zabudico-alexandr-21-21
 * Region: eu-central-1
 * Object Ownership: ACLs enabled (Can be configured using ACLs)
 * Block all public access: снять галочку (разрешить публичность)
@@ -90,15 +90,18 @@ s3-lab/
 
 Нажал `Create bucket`
 
+![create_bucket](/lab04_cloud_data_storage_amazon_s3/img/aws_bucket_1.png)
+
 `Что означает опция “Block all public access” и зачем нужна данная настройка?`
 
-Аналогично создал Приватный бакет с именем cc-lab4-priv-k21, но оставил все настройки по умолчанию (Block all public access — включен).
+Аналогично создал Приватный бакет с именем cc-lab4-priv-k21-zabudico-alexandr-21-21, но оставил все настройки по умолчанию (Block all public access — включен).
 
 Режим ACLs enabled позволяет управлять доступом к каждому объекту отдельно (например, сделать одну картинку публичной, а другую — приватной). Это удобно для лабораторных экспериментов и визуально понятно.
 
 #### Шаг 3. Загрузка объектов через AWS Management Console
 
-Перешёл в бакет cc-lab4-pub-k21.
+Перешёл в бакет 
+cc-lab4-pub-k21-zabudico-alexandr-21-21.
 
 Перешёл в директорию avatars/ и Нажал Upload.
 
@@ -107,6 +110,9 @@ s3-lab/
 После загрузки в пункте Permissions выбрал Grant public-read access.
 
 Завершил загрузку нажав Upload.
+
+![step3](/lab04_cloud_data_storage_amazon_s3/img/aws_bucket_upload_public_bucket_3.png)
+
 
 `Чем отличается ключ (object key) от имени файла?`
 
@@ -117,12 +123,20 @@ s3-lab/
 Выполнил команду для загрузку файла user2.jpg в публичный бакет:
 
 ```bash
-aws s3 cp s3-lab/public/avatars/user2.jpg s3://cc-lab4-pub-k21/avatars/user2.jpg --acl public-read
+aws s3 cp s3-lab/public/avatars/user2.jpg s3://
+cc-lab4-pub-k21-zabudico-alexandr-21-21/avatars/user2.jpg --acl public-read
 ```
+
+![step4](/lab04_cloud_data_storage_amazon_s3/img/aws_bucket_upload_public_bucket_3_2.png)
 
 Загрузил файл logo.png в публичный бакет, в директорию content/, также сделав его публичным.
 
+![step4_1](/lab04_cloud_data_storage_amazon_s3/img/aws_bucket_upload_public_bucket_3_2_1.png)
+
+
 Загрузил файл activity.csv в приватный бакет, не делая его публичным.
+
+![step4_2](/lab04_cloud_data_storage_amazon_s3/img/aws_bucket_upload_public_bucket_3_2_2.png)
 
 `В чём разница между командами aws s3 cp, mv и sync и для чего используется параметр флаг --acl public-read?`
 
@@ -131,11 +145,17 @@ aws s3 cp s3-lab/public/avatars/user2.jpg s3://cc-lab4-pub-k21/avatars/user2.jpg
 Открыл в браузере URL загруженного публичного объекта:
 
 ```
-https://cc-lab4-pub-k21.s3.eu-central-1.amazonaws.com/avatars/user1.jpg
+https://
+cc-lab4-pub-k21-zabudico-alexandr-21-21.s3.eu-central-1.amazonaws.com/avatars/user1.jpg
 ```
+
+![step5](/lab04_cloud_data_storage_amazon_s3/img/aws_bucket_upload_public_bucket_5.png)
+
 Увидел изображение.
 
 Попробывал открыть URL загруженного приватного объекта, он был недоступен.
+
+![step5](/lab04_cloud_data_storage_amazon_s3/img/aws_bucket_upload_priv_bucket_5_2.png)
 
 #### Шаг 6. Версионирование объектов
 
@@ -148,6 +168,10 @@ Properties → Bucket Versioning → Enable.
 Просмотрел вкладку Versions, там отображаются все версии объекта.
 
 `Что произойдёт, если выключить версионирование после его включения?`
+
+![step6](/lab04_cloud_data_storage_amazon_s3/img/aws_bucket_upload_public_bucket_6_versions.png)
+
+![step6](/lab04_cloud_data_storage_amazon_s3/img/aws_bucket_upload_public_bucket_6_versions_1.png)
 
 #### Шаг 7. Создание Lifecycle-правил для приватного бакета
 
@@ -165,6 +189,8 @@ Properties → Bucket Versioning → Enable.
 `Что такое Storage Class в Amazon S3 и зачем они нужны?`
 
 Так автоматизирую хранение логов: старые файлы будут автоматически архивироваться.
+
+![step7](/lab04_cloud_data_storage_amazon_s3/img/aws_bucket_Lifecycle_7.png)
 
 #### Шаг 8. Создание статического веб-сайта на базе S3
 
@@ -190,11 +216,14 @@ Properties → Bucket Versioning → Enable.
 
 Скопировал файлы веб-сайта в бакет cc-lab4-web-k21. Не забыл сделать файлы публичными!
 
+![step8](/lab04_cloud_data_storage_amazon_s3/img/aws_bucket_website_8.png)
+
 Открыл URL статического сайта, указанный в настройках S3.
 
 С помощью S3 можно быстро и просто развернуть статический сайт без необходимости использования серверов. Например, если есть React-приложение, его собранные файлы можно загрузить в такой бакет для хостинга.
 
 Несмотря на удобство, для серьёзных проектов рекомендуется использовать специализированные сервисы хостинга (например, AWS Amplify), которые предоставляют дополнительные возможности.
+
 
 #### Шаг 9. Дополнительное задание. Загрузка файлов через AWS SDK
 
@@ -294,6 +323,7 @@ Storage Class — это типы хранения в S3 (например, Stan
 * Документация AWS SDK для PHP: https://docs.aws.amazon.com/sdk-for-php/v3/developer-guide/
 
 ## Вывод
+
 В лабораторной работе №4 по Amazon S3 я узнал, как работает облачное хранилище для файлов. Я создал публичные и приватные бакеты, загрузил файлы через консоль и CLI, настроил доступ и публичность. Освоил команды cp, mv и sync, а также флаг для публичного доступа. Включил версионирование для сохранения старых версий файлов и lifecycle-правила для автоматического архивирования. Настроил статический сайт на S3 — просто загрузил файлы и сделал их публичными. В допзадании доработал PHP-скрипт: добавил уникальные имена файлов и базу SQLite для хранения данных о загрузках. Понял, что S3 отличается от обычных дисков: здесь файлы — объекты с ключами, а классы хранения помогают экономить деньги. Теперь могу использовать S3 в реальных проектах.
 
 ## Дополнительные важные аспекты
