@@ -1,0 +1,88 @@
+# ==================== TERRAFORM ====================
+# Локальные файлы Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+terraform.tfstate.backup
+
+# Файлы блокировки (можно коммитить, но часто игнорируют)
+# .terraform.lock.hcl
+
+# Файлы переменных с секретами
+*.tfvars
+terraform.tfvars
+
+# Планы выполнения
+*.tfplan
+plan.out
+
+# ==================== КЛЮЧИ И СЕКРЕТЫ ====================
+# Приватные ключи SSH
+*.pem
+*.key
+*.ppk
+id_rsa
+id_dsa
+
+# Сертификаты и ключи
+*.cer
+*.crt
+*.csr
+*.p12
+*.pfx
+
+# Файлы с паролями
+*.env
+.env
+.secret
+secrets.txt
+
+# ==================== СИСТЕМНЫЕ ФАЙЛЫ ====================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# ==================== IDE И РЕДАКТОРЫ ====================
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# IntelliJ
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Временные файлы редакторов
+*.swp
+*.swo
+*~
+
+# ==================== ЛОГИ ====================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ==================== РЕЗЕРВНЫЕ КОПИИ ====================
+*.backup
+*.bak
+backup/
+temp/
+tmp/
+
+
+
