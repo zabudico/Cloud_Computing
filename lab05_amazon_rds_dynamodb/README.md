@@ -56,7 +56,22 @@ Read Replicas позволяют масштабировать чтение, ра
 - **DynamoDB:** сессии, кэш, журналирование, метрики
 
 ## Скриншоты
+<<<<<<< HEAD
 [ВСТАВЬ СВОИ СКРИНШОТЫ ЗДЕСЬ]
+=======
+
+<img width="1817" height="811" alt="image" src="https://github.com/user-attachments/assets/f67f20aa-bf73-48ff-b15d-5c034202d8e2" />
+
+<img width="892" height="564" alt="image" src="https://github.com/user-attachments/assets/69214609-7d0e-4b24-8ba5-dc101e8f8ca3" />
+
+<img width="806" height="615" alt="image" src="https://github.com/user-attachments/assets/c2d81ad8-0977-4a55-a4b8-76048d13cd18" />
+
+<img width="895" height="843" alt="image" src="https://github.com/user-attachments/assets/2ae5f26e-a85b-49d1-a0e8-35e41dc85de8" />
+
+<img width="904" height="423" alt="image" src="https://github.com/user-attachments/assets/65ad86cf-02d2-497b-a9a2-8c811fa8be9d" />
+
+<img width="1826" height="1060" alt="image" src="https://github.com/user-attachments/assets/60b2dabd-1b2f-4643-9bbe-bc045c131b06" />
+>>>>>>> 15f592a5221a41254dd539727e540a648e97d275
 
 ## Вывод
 Лабораторная работа успешно выполнена. Освоены ключевые сервисы AWS для работы с базами данных.
