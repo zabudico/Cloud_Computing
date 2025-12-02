@@ -198,5 +198,5 @@ output "ssh_connect_command" {
 }
 
 output "key_info" {
-  value = "Приватный ключ сохранён в: ${path.module}/lab5-key.pem (не передавай никому!)"
+  value = "Приватный ключ сохранён в: ${path.module}/lab5-key.pem "
 }
