@@ -325,3 +325,21 @@ cd scripts
 # Очистка ресурсов
 terraform destroy -auto-approve
 ```
+
+
+
+<img width="1717" height="684" alt="image" src="https://github.com/user-attachments/assets/bb057751-7a1a-4f30-ad02-6dc40e8d827a" />
+
+<img width="1143" height="931" alt="image" src="https://github.com/user-attachments/assets/327e64c3-4c36-440a-a91e-4c76ca8083ae" />
+
+<img width="1544" height="628" alt="image" src="https://github.com/user-attachments/assets/a620f4c3-0643-4a89-a4b9-cca21e2ee2f3" />
+
+<img width="1661" height="478" alt="image" src="https://github.com/user-attachments/assets/06097076-1b41-4cd5-a1d9-76f24224e388" />
+
+<img width="878" height="877" alt="image" src="https://github.com/user-attachments/assets/a5d9a469-957f-4d8f-9c15-410e6c3fab49" />
+
+<img width="1116" height="845" alt="image" src="https://github.com/user-attachments/assets/effc5d51-8aa1-4f05-9fa0-59eb5c26b254" />
+
+<img width="1739" height="333" alt="image" src="https://github.com/user-attachments/assets/fa141f38-cf23-4beb-9d3b-d496912c51fd" />
+
+<img width="1715" height="322" alt="image" src="https://github.com/user-attachments/assets/3c5f6a17-2d71-4d30-a9ab-c6347d6e9d67" />
